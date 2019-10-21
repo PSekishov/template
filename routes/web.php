@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about','AboutController@about')->name('about');
+Route::get('/contact','ContactController@contact')->name('contact');
+
