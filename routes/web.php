@@ -13,6 +13,11 @@
 
 Auth::routes();
 
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
+  Route::get('/','AdminController@index');
+});
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about','AboutController@about')->name('about');
 Route::get('/contact','ContactController@contact')->name('contact');
