@@ -13,13 +13,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('myscripts/normalize.css') }}">
     <link rel="stylesheet" href="{{asset('myscripts/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{asset('myscripts/fontawesomecss/all.min.css') }}">
+    <link rel="stylesheet" href="{{asset('myscripts/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('myscripts/wow/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('myscripts/base.css') }}">
 </head>
 <body>
 
-
+<header class="header">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -47,31 +47,34 @@
                               @guest  
                                 <ul class="navbar-nav  float-sm-right">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                        <a class="nav-link" href="{{ route('login') }}">Вход</a>
                                     </li>
                                       <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                            <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                                     </li>
                                 </ul>
 
-                                @else 
-
+                                @else
                                 <ul class="navbar-nav  float-sm-right">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" href="{{url('/cabinet')}}">Вход</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class='nav-link' href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Выход
                                         </a>
         
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                         </li>
-                                    </ul>     
+                                    </ul>
+
                                 @endguest
                               
                             </div>
@@ -80,14 +83,12 @@
         </div>
     </div>
 
+</header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                    @yield('content')
-            </div>
-        </div>
-    </div>
+
+
+    @yield('content')
+
 
     <!-- Scripts -->
     <script src="{{ asset('myscripts/jquery-3.4.1.min.js') }}"></script>

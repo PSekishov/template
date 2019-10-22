@@ -11,12 +11,23 @@
 |
 */
 
+/***** авторизация *****/
+
 Auth::routes();
+
+
+/***** admin pages *****/
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
   Route::get('/','AdminController@index');
+  Route::resource('/profession','ProfessionController');
 });
 
+/***** page cabinet *****/
+
+Route::get('/cabinet','CabinetController@cabinet')->name('cabinet');
+
+/***** pages *****/
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about','AboutController@about')->name('about');
