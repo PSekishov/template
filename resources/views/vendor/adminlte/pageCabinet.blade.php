@@ -39,14 +39,14 @@
                         <!-- /.navbar-collapse -->
                     @else
                         <!-- Logo -->
-{{--                            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">--}}
-{{--                                <!-- mini logo for sidebar mini 50x50 pixels -->--}}
-{{--                                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>--}}
-{{--                                <!-- logo for regular state and mobile devices -->--}}
-{{--                                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>--}}
-{{--                            </a>--}}
+                        {{--                            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">--}}
+                        {{--                                <!-- mini logo for sidebar mini 50x50 pixels -->--}}
+                        {{--                                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>--}}
+                        {{--                                <!-- logo for regular state and mobile devices -->--}}
+                        {{--                                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>--}}
+                        {{--                            </a>--}}
 
-                            <!-- Header Navbar -->
+                        <!-- Header Navbar -->
                             <nav class="navbar navbar-static-top" role="navigation">
                                 <!-- Sidebar toggle button-->
                                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -93,7 +93,7 @@
 
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu" data-widget="tree">
-                        @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
+{{--                        @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')--}}
                     </ul>
                     <!-- /.sidebar-menu -->
                 </section>
@@ -135,3 +135,4 @@
     @stack('js')
     @yield('js')
 @stop
+
