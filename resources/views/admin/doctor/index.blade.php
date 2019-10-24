@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-    <h1 class="text-center">Профессии нашей клиники</h1>
+    <h1 class="text-center">Доктора нашей клиники</h1>
 @stop
 
 @section('content')
@@ -17,8 +17,6 @@
             <th>Ном.кабинета</th>
             <th>О докторе</th>
             <th>Действия</th>
-{{--            <th>Редакитировать</th>--}}
-{{--            <th>Удалить</th>--}}
         </tr>
         <tbody>
         @foreach($doctors as $doctor)
@@ -35,7 +33,6 @@
                     <a href="{{url('/admin/doctor/'.$doctor->id.'/edit')}}">Edit</a>
                     <a href="#" class="delete" data-id="{{$doctor->id}}">Delete</a>
                 </td>
-{{--                <td></td>--}}
             </tr>
         @endforeach
         </tbody>

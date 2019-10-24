@@ -25,20 +25,6 @@ class AppServiceProvider extends ServiceProvider
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             $event->menu->add('ГЛАВНАЯ ПАНЕЛЬ');
 
-            /*********** Доктора ***************/
-
-            $event->menu->add('Доктора');
-            $event->menu->add([
-                'text' => 'Доктора',
-                'url' => 'admin/doctor',
-                'icon_color' => 'aqua',
-                'label'=> Doctor::all()->count(),
-            ]);
-            $event->menu->add([
-                'text' => 'Добавить нового доктора',
-                'url' => 'admin/doctor/create',
-                'icon_color' => 'yellow',
-            ]);
 
             /*********** Профессии ***************/
 
@@ -55,6 +41,20 @@ class AppServiceProvider extends ServiceProvider
                 'icon_color' => 'yellow',
             ]);
 
+            /*********** Доктора ***************/
+
+            $event->menu->add('Доктора');
+            $event->menu->add([
+                'text' => 'Доктора',
+                'url' => 'admin/doctor',
+                'icon_color' => 'aqua',
+                'label'=> Doctor::all()->count(),
+            ]);
+            $event->menu->add([
+                'text' => 'Добавить нового доктора',
+                'url' => 'admin/doctor/create',
+                'icon_color' => 'yellow',
+            ]);
 
 
 
