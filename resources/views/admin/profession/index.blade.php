@@ -21,9 +21,9 @@
           <td>{{$loop->iteration}}</td>
           <td><img src="{{$profession->imgPath}}" alt=" " class="img-responsive" style="width: 100px; height: 100px;"></td>
           <td>{{$profession->prof}}</td>
-          <td>{{$profession->descProf}}</td>
+          <td>{!! $profession->descProf !!}</td>
           <td><a href="{{url('/admin/profession/'.$profession->id.'/edit')}}">Edit</a></td>
-          <td><a href="#" class="delete" data-id="{{$profession->id}}">delete</a></td>
+          <td><a href="#" class="delete" data-id="{{$profession->id}}">Delete</a></td>
       </tr>
        @endforeach
       </tbody>

@@ -1,3 +1,37 @@
+
+
 body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     background-color: #a6e1ec;
+}
+
+/*body.cabinet{*/
+/*    background-color: #01FF70;*/
+/*}*/
+
+a{
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+ .sidebar .list-group-item:hover{
+    background-color: yellow;
+}
+
+
+.sidebar .list-group-item-action{
+    color: #000;
+}
+
+
+.sidebar .active{
+    background-color: yellow;
+    color: #000;
+    border-color: transparent;
 }

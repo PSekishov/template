@@ -33,10 +33,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             
                               <ul class="navbar-nav mr-auto">
-                                <li class="nav-item {{request()->is('/') ? 'active' : '' }}">
+                                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{url('/')}}">Home</a>
                                 </li>
-                                <li class="nav-item {{request()->is('about') ? 'active' : '' }} ">
+                                <li class="nav-item {{ request()->is('about') ? 'active' : '' }} ">
                                 <a class="nav-link" href="{{url('/about')}}">About</a>
                                 </li>
                                 <li class="nav-item">
@@ -87,7 +87,9 @@
 
 
 
-    @yield('content')
+@yield('content')
+
+
 
 
     <!-- Scripts -->

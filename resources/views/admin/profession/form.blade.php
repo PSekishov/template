@@ -27,4 +27,4 @@
 <br>
 <br>
 
-{!! Form::submit('Создать',['class'=>'btn btn-primary']) !!}
+{!! Form::submit('Сохранить',['class'=>'btn btn-primary']) !!}

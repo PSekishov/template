@@ -11,13 +11,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{asset('myscripts/normalize.css') }}">
-    <link rel="stylesheet" href="{{asset('myscripts/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{asset('myscripts/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{asset('myscripts/wow/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('myscripts/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('myscripts/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('myscripts/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('myscripts/wow/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('myscripts/base.css') }}">
 </head>
-<body>
+<body class="cabinet">
 
 <header class="header">
     <div class="container">
@@ -46,23 +46,23 @@
 
 
 
-                            <ul class="navbar-nav  float-sm-right">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
-                                </li>
+                        <ul class="navbar-nav  float-sm-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                            </li>
 
-                                <li class="nav-item">
-                                    <a class='nav-link' href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                            <li class="nav-item">
+                                <a class='nav-link' href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                        Выход
-                                    </a>
+                                    Выход
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
 
 
 
@@ -74,14 +74,31 @@
 
 </header>
 
-
+<section class="sidebar">
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            @yield('content')
+        <div class="col-sm-3">
+            <ul class="list-group">
+                <a href="{{ url('/cabinet') }}"><li class="list-group-item text-center list-group-item-action {{request()->is('cabinet') ? 'active' : ' '}}">Главная кабинета</li></a>
+                <a href="{{ url('/aboutme') }}"><li class="list-group-item text-center list-group-item-action {{request()->is('aboutme') ? 'active' : ' '}}">Обо мне</li></a>
+                <a href="{{ url('/mydoctor') }}"><li class="list-group-item text-center list-group-item-action {{request()->is('mydoctor') ? 'active' : ' '}}">Семейный врач</li></a>
+                <a href=""><li class="list-group-item text-center">Мои епекрифы</li></a>
+                <a href=""><li class="list-group-item text-center">Назначения врача</li></a>
+                <a href=""><li class="list-group-item text-center">Список посещения врача</li></a>
+            </ul>
         </div>
+
+        <div class="col-sm-9">
+            @yield('content_cabinet')
+        </div>
+
     </div>
 </div>
+
+</section>
+
+
+
 
 <!-- Scripts -->
 <script src="{{ asset('myscripts/jquery-3.4.1.min.js') }}"></script>
@@ -91,4 +108,28 @@
 <script src="{{ asset('myscripts/myscript.js') }}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -21,11 +21,14 @@ Auth::routes();
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
   Route::get('/','AdminController@index');
   Route::resource('/profession','ProfessionController');
+  Route::resource('/doctor','DoctorController');
 });
 
 /***** page cabinet *****/
 
 Route::get('/cabinet','CabinetController@cabinet')->name('cabinet');
+Route::get('/mydoctor','CabinetController@mydoctor')->name('mydoctor');
+Route::get('/aboutme','CabinetController@aboutme')->name('aboutme');
 
 /***** pages *****/
 
